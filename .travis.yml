@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+
+# This section is executed before tests a run
+# It's the setup stage
+before_install:
+  - docker build -t davidraese/docker-react -f Dockerfile.dev .
+
+# Contain commands to run the tests
+# if one of the commands returns a statuscode other then 0 Travis-ci assums that the tests failed
+script:
+  - docker run -e CI=true davidraese/docker-react npm run test
+
+language: generic
