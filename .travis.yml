@@ -29,7 +29,7 @@ language: generic
 
 deploy:
   provider: elasticbeanstalk
-  region: eu-central-1"
+  region: "eu-central-1"
   app: "docker-react"
   env: "Dockerreact-env"
   bucket_name: "elasticbeanstalk-eu-central-1-306516560977"
